@@ -56,6 +56,6 @@ void setBuildStatus(String message, String state) {
         reposSource: [$class: "ManuallyEnteredRepositorySource", url: "https://github.com/Magdi888/Mutlibranches-testing"],
         contextSource: [$class: "ManuallyEnteredCommitContextSource", context: "ci/jenkins/build-status"],
         errorHandlers: [[$class: "ChangingBuildStatusErrorHandler", result: "UNSTABLE"]],
-        statusResultSource: [$class: "ConditionalStatusResultSource", results: [[$class: "AnyBuildResult", message: message, state: state]]]
+        statusResultSource: [$class: "ConditionalStatusResultSource", results: [[$class: "AnyBuildResult", description: message, state: state]]]
     ]);
 }
